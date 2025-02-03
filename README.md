@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 个人主页 | Personal Homepage
 
-First, run the development server:
+一个使用 Next.js 构建的个人主页，展示了一些有趣的交互效果。
+
+A personal homepage built with Next.js, featuring various interactive elements.
+
+[简体中文](./README.md) | [English](./README_EN.md)
+
+</div>
+
+## ✨ 特性
+
+- 🌓 深色/浅色模式切换
+- 🍔 点击背景掉落汉堡
+- 🐰 可爱的兔子指针
+- 🎨 动态渐变背景
+- 📊 Google Analytics 集成
+- 🔒 Cookie 隐私提示
+- 📱 响应式设计
+
+## 🛠️ 技术栈
+
+- Next.js 14
+- TypeScript
+- CSS Modules
+- React Icons
+
+## 🚀 本地开发
 
 ```bash
+# 克隆仓库
+git clone https://github.com/NotRespond1ng/homepage.git
+
+# 进入项目目录
+cd homepage
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+然后在浏览器打开 [http://localhost:3000](http://localhost:3000) 查看效果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+项目使用 PM2 在 Ubuntu 服务器上部署，通过 Nginx 反向代理提供服务。
 
-## Learn More
+### 部署步骤
 
-To learn more about Next.js, take a look at the following resources:
+1. 构建项目
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. 使用 rsync 同步到服务器
+```bash
+# 确保 rsync.sh 有执行权限
+chmod +x rsync.sh
+# 运行同步脚本
+./rsync.sh
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. 在服务器上使用 PM2 启动
+```bash
+pm2 start npm --name "homepage" -- start
+```
 
-## Deploy on Vercel
+## 📝 配置说明
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `next.config.js`: Next.js 配置文件
+- `rsync.sh`: 部署脚本
+- `nginx/`: Nginx 配置文件
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可
+
+[MIT License](./LICENSE)
+
+## 🙏 致谢
+
+- [Next.js](https://nextjs.org/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Google Analytics](https://analytics.google.com/)
