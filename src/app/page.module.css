@@ -166,3 +166,124 @@ a.secondary {
     filter: invert();
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.profile {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 手动切换深色模式的样式 */
+:root[data-theme='dark'] .profile {
+  background: rgba(40, 40, 40, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme='dark'] .name {
+  color: #fff;
+}
+
+:root[data-theme='dark'] .bio {
+  color: #bbb;
+}
+
+:root[data-theme='dark'] .socialLink {
+  color: #bbb;
+}
+
+:root[data-theme='dark'] .socialLink:hover {
+  color: #fff;
+}
+
+/* 系统深色模式的样式可以保留 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .profile {
+    background: rgba(40, 40, 40, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  :root:not([data-theme='light']) .name {
+    color: #fff;
+  }
+  
+  :root:not([data-theme='light']) .bio {
+    color: #bbb;
+  }
+  
+  :root:not([data-theme='light']) .socialLink {
+    color: #bbb;
+  }
+  
+  :root:not([data-theme='light']) .socialLink:hover {
+    color: #fff;
+  }
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.bio {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.socialLink {
+  color: #666;
+  font-size: 1.8rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: #333;
+  transform: translateY(-2px);
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

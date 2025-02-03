@@ -3,8 +3,13 @@
   --foreground: #171717;
 }
 
+:root[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
@@ -18,10 +23,36 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(45deg, #4158D0, #C850C0, #00c4cc);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 深色模式下的渐变 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(45deg, #1a1a4d, #4a1d47, #004446);
+  }
+}
+
+/* 手动切换深色模式 */
+:root[data-theme='dark'] body {
+  background: linear-gradient(45deg, #1a1a4d, #4a1d47, #004446);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 * {
@@ -39,4 +70,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+body, 
+a, 
+button {
+  cursor: none !important;
 }

@@ -1,0 +1,26 @@
+.usagi {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
+  animation: hop 0.5s infinite alternate;
+  will-change: transform;
+  /* 使用 GPU 加速 */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.usagi img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+@keyframes hop {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
