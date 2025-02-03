@@ -2,7 +2,7 @@
 
 # 配置信息
 USER="ubuntu"                          # 服务器用户名
-SERVER="16.162.187.111"             # 服务器IP地址
+SERVER="your_ip"             # 服务器IP地址
 DEPLOY_PATH="/var/next-app"         # 服务器部署路径
 PORT="22"                            # SSH端口，默认22
 
