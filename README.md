@@ -8,7 +8,9 @@ A personal homepage built with Next.js, featuring various interactive elements.
 
 [简体中文](./README.md) | [English](./README_EN.md)
 
-![preview](./screenshots/preview.png)
+[![preview](./screenshots/preview.png)](https://www.notrespond1ng.top)
+
+🔗 [在线预览 | Live Demo](https://www.notrespond1ng.top)
 
 </div>
 
