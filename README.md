@@ -8,6 +8,8 @@ A personal homepage built with Next.js, featuring various interactive elements.
 
 [简体中文](./README.md) | [English](./README_EN.md)
 
+![preview](./screenshots/preview.png)
+
 </div>
 
 ## ✨ 特性
